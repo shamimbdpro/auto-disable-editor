@@ -1,92 +1,66 @@
 <?php
 /**
  * @wordpress-plugin
- * Plugin Name:       Auto Disable Gutenburg
+ * Plugin Name:       Disable Gutenberg
  * Plugin URI:        https://wordpress.org/plugins/auto-disable-editor
  * Description:       Auto Disable Gutenberg will help to enable classic editor. its will disable new gutenberg block plugin.
- * Version:           1.0.1
+ * Version:           1.0.6
  * Author:            CodePopular
  * Author URI:        https://www.codepopular.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       auto-disable-gutenburg
-   @coypright: -2019 CodePopular (support: support@codepopular.com)
+ * Text Domain:       auto-disable-editor
+ * Requires at least: 4.0
+ * Tested up to: 5.8
+ * Requires PHP: 5.6
+   @coypright: -2020 CodePopular (support: support@codepopular.com)
  */
+
+
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {
   echo "can't access directly";
   exit();
 }
+
+
+
+
+if ( ! defined( 'ADE_PLUGIN_DIR_PATH' ) ) {
+  define( 'ADE_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__) );
+}
+
+
+
+
+
+if ( ! defined( 'ADE_PLUGIN_URL' ) ) {
+  define( 'ADE_PLUGIN_URL', plugin_dir_url(__FILE__) );
+}
+
+
+
+
 // main plugin class
-class CodePopular_disable_gutenburg
+class CodePopular_disable_gutenberg
 {
   static function init()
   {
     if (is_admin()) {
-      add_action('admin_menu', array(__CLASS__, 'auto_disable_gutenburg_add_pages'));
       add_filter('install_plugins_table_api_args_featured', array(__CLASS__, 'featured_plugins_tab'));
     }
       
   
   } // init
-  
 
-  /**
-   * Add menu pages
-   *
-   * @since 1.0.1
-   * 
-   * @return null
-   * 
-   */
-  static function auto_disable_gutenburg_add_pages()
-  {
- 
-
- add_options_page( 
-        __( 'Auto Disable Gutenburg', 'auto-disable-gutenburg' ),
-        __( 'Auto Disable Gutenburg ', 'auto-disable-gutenburg' ),
-        'manage_options',
-  'auto-disable-gutenburg',
-        array(__CLASS__, 'auto_disable_gutenburg_dash')
-      
-    );
-
-
-
-  } // auto_disable_gutenburg_add_pages
-
-  /**
-   * Dashboard Page
-   *
-   * @since 1.0.1
-   * 
-   * @return null
-   * 
-   */
-  static function auto_disable_gutenburg_dash()
-  {
-    
-?>
-
-<div class="wrap">
-<h1>
-  <span class="dashicons dashicons-yes-alt" style="font-size: inherit; line-height: unset;"></span>
-   Auto Disable Gutenburg</h1>
-  <br> 
-  <h3 style="color:green">Auto Disable Gutneburg plugin help you to enable classic editor. no will be any affected this plugin to your system. its most secured<h3>
-  <div style="font-size:14px">Hire Us to get help- <a href="https://www.codepopular.com" target="__blank">CodePopular</a></div>
-</div> 
-
-  
-  <?php } 
   
   // add our plugins to recommended list
   static function plugins_api_result($res, $action, $args) {
     remove_filter('plugins_api_result', array(__CLASS__, 'plugins_api_result'), 10, 1);
 
     $res = self::add_plugin_favs('wp-maximum-upload-file-size', $res);
+    $res = self::add_plugin_favs('unlimited-theme-addons', $res);
 
     return $res;
   } // plugins_api_result
@@ -152,6 +126,11 @@ if (version_compare($GLOBALS['wp_version'], '5.0-beta', '>')) {
   
 }
 
+add_action('init', array('CodePopular_disable_gutenberg', 'init'));
 
 
-add_action('init', array('CodePopular_disable_gutenburg', 'init'));
+if (is_admin()) {
+    require_once ADE_PLUGIN_DIR_PATH . 'Admin/admin.php';
+  }
+
+
