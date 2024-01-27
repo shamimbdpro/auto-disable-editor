@@ -1,10 +1,10 @@
 === Disable Gutenberg ===
 Contributors: codepopular, shamimtpi
-Donate link: https://www.codepopular.com
+Donate link: https://ko-fi.com/codepopular
 Tags: Gutenberg, disable gutenberg, onclick disable gutenberg, how to disable gutenberg, remove gutenberg,disable block editor
 Requires at least: 4.0
-Tested up to: 5.8
-Stable tag: 1.0.6
+Tested up to: 6.4
+Stable tag: 1.0.7
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,10 @@ No, this is a small size WordPress Plugin. it will assist to disable gutenberg p
 
 
 == Changelog ==
+
+1.0.7
+-------------
+WordPress Latest Version 6.4 compatibility checked.
 
 1.0.6
 -------------

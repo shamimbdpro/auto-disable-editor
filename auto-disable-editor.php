@@ -4,16 +4,16 @@
  * Plugin Name:       Disable Gutenberg
  * Plugin URI:        https://wordpress.org/plugins/auto-disable-editor
  * Description:       Auto Disable Gutenberg will help to enable classic editor. its will disable new gutenberg block plugin.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            CodePopular
  * Author URI:        https://www.codepopular.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       auto-disable-editor
  * Requires at least: 4.0
- * Tested up to: 5.8
+ * Tested up to: 6.4
  * Requires PHP: 5.6
-   @coypright: -2020 CodePopular (support: support@codepopular.com)
+   @coypright: -2024 CodePopular (support: info@codepopular.com)
  */
 
 
@@ -24,15 +24,9 @@ if ( !defined( 'ABSPATH' ) ) {
   exit();
 }
 
-
-
-
 if ( ! defined( 'ADE_PLUGIN_DIR_PATH' ) ) {
   define( 'ADE_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__) );
 }
-
-
-
 
 
 if ( ! defined( 'ADE_PLUGIN_URL' ) ) {

@@ -26,7 +26,6 @@ class ADE_admin{
 			
 		}
 
-		
 		public function admin_display(){
 			?>
 
@@ -35,7 +34,9 @@ class ADE_admin{
 				  <span class="dashicons dashicons-yes-alt" style="font-size: inherit; line-height: unset;"></span>
 				   Auto Disable Gutenburg</h1>
 				  <br> 
-				  <h3 style="color:green">Thank you for install auto disable editor. you can disable gutenberg block editor to enable this plugin. Enjoy it.<h3>
+				  <h3 style="color:green">
+                      Thank you for install auto disable editor. you can disable gutenberg block editor to enable this plugin. Enjoy it.
+                      <h3>
 				  <div style="font-size:14px">Hire Us to get help- <a href="https://www.codepopular.com" target="__blank">CodePopular</a></div>
 			</div> 
 
@@ -49,9 +50,3 @@ class ADE_admin{
 if(class_exists('ADE_admin')){
 	new ADE_admin;
 }
-
-
-
-
-
- ?>
