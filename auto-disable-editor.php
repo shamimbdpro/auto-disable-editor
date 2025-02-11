@@ -4,14 +4,14 @@
  * Plugin Name:       Disable Gutenberg
  * Plugin URI:        https://wordpress.org/plugins/auto-disable-editor
  * Description:       Auto Disable Gutenberg will help to enable classic editor. its will disable new gutenberg block plugin.
- * Version:           1.0.7
+ * Version:           1.0.8
  * Author:            CodePopular
  * Author URI:        https://www.codepopular.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       auto-disable-editor
  * Requires at least: 4.0
- * Tested up to: 6.4
+ * Tested up to: 6.7
  * Requires PHP: 5.6
    @coypright: -2024 CodePopular (support: info@codepopular.com)
  */
@@ -44,11 +44,11 @@ class CodePopular_disable_gutenberg
     if (is_admin()) {
       add_filter('install_plugins_table_api_args_featured', array(__CLASS__, 'featured_plugins_tab'));
     }
-      
-  
+
+
   } // init
 
-  
+
   // add our plugins to recommended list
   static function plugins_api_result($res, $action, $args) {
     remove_filter('plugins_api_result', array(__CLASS__, 'plugins_api_result'), 10, 1);
@@ -58,8 +58,8 @@ class CodePopular_disable_gutenberg
 
     return $res;
   } // plugins_api_result
-  
-  
+
+
   // helper function for adding plugins to fav list
   static function featured_plugins_tab($args) {
     add_filter('plugins_api_result', array(__CLASS__, 'plugins_api_result'), 10, 3);
@@ -109,15 +109,15 @@ class CodePopular_disable_gutenberg
 // Disable Gutenberg
 
 if (version_compare($GLOBALS['wp_version'], '5.0-beta', '>')) {
-  
+
   // WP > 5 beta
   add_filter('use_block_editor_for_post_type', '__return_false', 10);
-  
+
 } else {
-  
+
   // WP < 5 beta
   add_filter('gutenberg_can_edit_post_type', '__return_false', 10);
-  
+
 }
 
 add_action('init', array('CodePopular_disable_gutenberg', 'init'));

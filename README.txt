@@ -1,19 +1,19 @@
 === Disable Gutenberg ===
 Contributors: codepopular, shamimtpi
 Donate link: https://ko-fi.com/codepopular
-Tags: Gutenberg, disable gutenberg, onclick disable gutenberg, how to disable gutenberg, remove gutenberg,disable block editor
+Tags: disable gutenberg, onclick disable gutenberg, how to disable gutenberg, remove gutenberg,disable block editor
 Requires at least: 4.0
-Tested up to: 6.4
-Stable tag: 1.0.7
+Tested up to: 6.7
+Stable tag: 1.0.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Auto Disable gutenberg plugin will help you to disable gutenberg block editor
 == Description ==
-Auto Disable gutenberg plugin will help you to disable gutenberg block editor.You can disable Gutenberg completely. after active this plugin you can enable classic editor automaticly. 
+Auto Disable gutenberg plugin will help you to disable gutenberg block editor.You can disable Gutenberg completely. after active this plugin you can enable classic editor automaticly.
 
-Watch the video how to install plugin. 
+Watch the video how to install plugin.
 
 https://www.youtube.com/watch?v=UzzbVZ-MYKw&feature=youtu.be
 
@@ -29,7 +29,7 @@ Unlimited Theme Addon offering paid version where you can build creative countdo
 ### [**Countdown Timer Pro Features**](https://codepopular.com/product/unlimited-theme-addons-pro/)
 * Creative countdown timer with high quality design
 * Multiple layouts & design
-* Set the countdown timer Posts / Pages 
+* Set the countdown timer Posts / Pages
 * No coding skill required
 * Customize everything
 * Fully Responsive
@@ -57,6 +57,10 @@ No, this is a small size WordPress Plugin. it will assist to disable gutenberg p
 
 
 == Changelog ==
+
+1.0.8
+-------------
+WordPress Latest Version 6.7 compatibility checked.
 
 1.0.7
 -------------
